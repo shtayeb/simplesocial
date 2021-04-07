@@ -19,6 +19,10 @@ use App\Http\Controllers\UserPostController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/storage/{extra}', function ($extra) {
+    return redirect('/public/storage/$extra');
+    })->where('extra', '.*');
+
 Route::get('/',function(){
     return view('home');
 })->name('home');
